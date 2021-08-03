@@ -1,0 +1,30 @@
+include ../data/navbarItems.pug
+include ../data/footerItems.pug
+
+doctype html
+head 
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='description' content='Some description')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    block title
+    link(rel="stylesheet" href="https://landkit.goodthemes.co/assets/css/libs.bundle.css")
+    link(rel="stylesheet" href="https://landkit.goodthemes.co/assets/css/theme.bundle.css")
+    link(rel="stylesheet" href="https://demo.w3layouts.com/assests/css/font-awesome.min.css")
+
+    link(rel="stylesheet" href="css/style.css")
+
+body
+    block header 
+        include ../partials/header.pug
+
+    block main
+
+    block footer
+        include ../partials/footer.pug
+
+script(src='https://landkit.goodthemes.co/assets/js/vendor.bundle.js')
+script(src='https://landkit.goodthemes.co/assets/js/theme.bundle.js')
+script(src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN")
+script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q")
+script(src="https://maxcdn.bootstr apcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl")

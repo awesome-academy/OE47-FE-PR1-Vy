@@ -1,0 +1,38 @@
+footer.text-white.pt-10.bg-dark
+    .container.pb-10
+        .row
+            .col-lg-4.col-md-6.col-sm-6.col-12.mb-6
+                h2.text-white.large_title.text-uppercase.fw-bold.fs-3.white-space-nowrap Liên hệ với chúng tôi
+                span.description.text-white.d-flex.mb-3
+                    i.fa.fa-map-marker.text-primary.me-2
+                    p.text-muted.p-0.m-0.font-size-14 Tầng 4, Tòa nhà Hanoi Group Số 442 Đội Cấn, P. Cổng Vị, Q. Ba Đình, Hà Nội           
+                span.description.text-white.white-space-nowrap.align-items-center.d-flex.mb-3
+                    i.fa.fa-phone.text-primary.me-2 
+                    p.text-muted.p-0.m-0.me-2.font-size-14 (04) 6674 2332 -
+                    i.fa.fa-phone.text-primary.me-2
+                    p.text-muted.p-0.m-0.font-size-14 (04) 6674 2332
+                span.description.text-white.align-items-center.d-flex.white-space-nowrap.mb-3
+                    span.text-white.d-flex
+                        i.fa.fa-phone.text-primary.me-2 
+                        p.text-muted.p-0.m-0.me-2.font-size-14 (04) 6674 2332 -
+                    span.text-white
+                        i.fa.fa-envelope.me-2 
+                        a.hover-primary-light.text-decoration-none.font-size-14.text-primary(href="") support@bizweb.vn    
+
+            .col-lg-8.col-md-12.col-sm-6.col-12.list-submenu
+                .row
+                    each footerItem in footerItems
+                        - const { title, listFooterItems } = footerItem
+                        .list-submenu-item.col-lg-3.col.md-6.col-sm-6.col-12
+                            h6.fw-bold.text-uppercase.text-white.font-size-16= title
+                            ul.list-unstyled
+                                each listFooterItem in listFooterItems
+                                    - const { name, url } = listFooterItem
+                                    li 
+                                        a.text-capitalize.text-decoration-none.hover-primary-light(href=url)
+                                            =name
+    .footer-below-section.py-4.border-top
+        .container
+            .copyright-footer-left.font-size-16
+                p.p-0.m-0.text-gray-700 &copy; Copyright 2008 - 2014 DKT Technology JSC
+            .payment-method-right

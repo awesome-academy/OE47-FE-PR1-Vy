@@ -44,8 +44,56 @@ p {
     vertical-align: middle;
 }
 
+@font-face {
+    font-family: "Viceroy";
+    src: url("../assets/fonts/ViceroyJF.ttf");
+}
+
+.height-40 {
+    height: 40px !important;
+}
+
+.product-tags {
+    background-color: transparent;
+    color: $color-black;
+    border: 1px solid $color-black;
+    display: inline-block;
+    font-size: 0.75em;
+    font-weight: 600;
+    line-height: 1;
+    padding: 0.25rem 0.75rem;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.button_custom {
+    border-radius: 0.375rem;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    background-color: transparent;
+    line-height: 1.6;
+    text-align: center;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+        box-shadow 0.15s ease-in-out;
+    user-select: none;
+    vertical-align: middle;
+}
+
 .text-thirsty {
     font-family: "ThirstyScriptExtraBoldDemo";
+}
+.text-viceroy {
+    font-family: "Viceroy";
+}
+
+.w-50px {
+    width: 50px;
+}
+
+.background-primary {
+    background-color: $color-primary;
 }
 
 .text-viceroy {
@@ -96,6 +144,7 @@ p {
     border-radius: 0;
     border: none;
     border: solid 4px $color-primary !important;
+
     &:before {
         content: "";
         width: 14px;

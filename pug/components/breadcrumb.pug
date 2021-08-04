@@ -1,0 +1,11 @@
+mixin breadcrumb(items, last)
+    +section("breadcrumb", "py-0")
+        .container
+            nav(aria-label='breadcrumb')
+                nav(aria-label='breadcrumb')
+                    ol.breadcrumb
+                        each item in items
+                            li.breadcrumb-item
+                                a.text-black.text-capitalize(href='#')= item
+                        if(last)
+                            li.breadcrumb-item.active.text-primary.text-capitalize(aria-current='page')= last

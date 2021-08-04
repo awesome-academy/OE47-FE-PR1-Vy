@@ -1,0 +1,35 @@
+section.product-detail#product-detail {
+
+    .main-img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .img-thumbnail-icon {
+        width: 100%;
+        padding-bottom: 100%;
+    }
+
+    .img-thumbnail-icon-above::after {
+        content: "\f176";
+        font-family: fontawesome;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .img-thumbnail-icon-bellow::after {
+        content: "\f175";
+        font-family: fontawesome;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .div-img-thumbnail {
+        border: solid 1px $color-muted !important;
+        cursor: pointer;
+    }
+}

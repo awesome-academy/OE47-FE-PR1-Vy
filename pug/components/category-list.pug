@@ -1,0 +1,27 @@
+mixin category-list
+    .category-list.col-lg-3
+        .category-list-item
+            h5.text-uppercase.fw-bolder
+                i.fa.fa-list
+                |  danh mục sản phẩm
+            +line
+            ul.list-categories.list-inline
+                each listCategory in listCategories
+                    - const { title, id, listCategoryItems } = listCategory
+                    li.list-categories-item.list-unstyled.pt-4
+                        input(class=id, id=id)(type="checkbox")
+                        label.toggle-menu.text-uppercase.align-items-center.d-flex.hover-primary-dark.justify-content-between.m-0.categories-text(for=id)= title
+                        ul.sub-categories-list.m-1
+                            each listCategoryItem in listCategoryItems
+                                li.hover-primary-grey.text-capitalize
+                                    = listCategoryItem
+                    +line
+        .category-list-item
+            h5.text-uppercase.fw-bolder so sánh sản phẩm
+            +line
+            span.font-size-14 Bạn chưa có sản phẩm nào để so sánh
+        .category-list-item
+            h5.text-uppercase.fw-bolder tag sản phẩm
+            +line
+            +productTags()
+            img.w-100(src="../assets/images/product/banner-small.png" alt="banner-small")

@@ -1,0 +1,14 @@
+@mixin hover-primary($color) {
+
+    color: $color;
+    white-space: nowrap;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+        color: $color-primary;
+    }
+    
+}
+@mixin font-size($font-size) {
+    font-size: $font-size !important;
+}

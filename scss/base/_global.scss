@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "ThirstyScriptExtraBoldDemo";
+    src: url("../assets/fonts/thirstyscriptregular.otf");
+}
+.text-thirsty {
+    font-family: "ThirstyScriptExtraBoldDemo";
+}
+.hover-primary-light {
+    @include hover-primary($color-white);
+}
+.hover-primary-dark {
+    @include hover-primary($color-black);
+}
+.hover-primary-muted {
+    @include hover-primary($color-muted);
+}
+.font-size-14 {
+    @include font-size($font-size-14);
+}
+.font-size-16 {
+    @include font-size($font-size-16);
+}
+.bg-dark {
+    background-color: $color-black !important;
+}
+.border-primary {
+    border-radius: 0;
+    border: none;
+    border: solid 4px $color-primary !important;
+    &:before {
+        content: "";
+        width: 14px;
+        height: 14px;
+        background: $color-primary;
+        border: 1px solid $color-primary;
+        display: block;
+        border-right: none;
+        border-bottom: none;
+        transform: translateX(-50%) rotateZ(45deg);
+        position: absolute;
+        top: -7px;
+        left: 49%;
+        z-index: 1001;
+    }
+}
+.border-radius-none {
+    border-radius: 0 !important;
+}
+.white-space-nowrap {
+    white-space: nowrap;
+}
+.text-primary {
+    color: $color-primary !important;
+}
+.w-50 {
+    width: 50%;
+}
+.img-cart-size {
+    width: 50px;
+    height: 50px;
+}

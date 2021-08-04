@@ -1,0 +1,52 @@
+header.navbar-expand-lg.navbar.bg-light#header
+    div.container
+        a.navbar-brand.text-uppercase
+            span.text-white.navbar-logo-specials.me-3.text-thirsty M
+            span.text-black.text-lowercase.text-thirsty andala
+        button.navbar-toggler.border-radius-none.text-white.bg-dark(type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation")
+            span.text-white.fa.fa-bars
+        div.collapse.navbar-collapse.flex-grow-0#navbarCollapse
+            button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation")
+                i.fa.fa-times
+            ul.navbar-nav
+                each navbarItem in navbarItems
+                    - const { url, name, hasSubmenu, submenuItems } = navbarItem
+                    if(!hasSubmenu)
+                        li.nav-item
+                            a.nav-link(href=url).hover-primary-dark.text-uppercase= name
+                    else 
+                        li.nav-item.dropdown
+                            a.nav-link.dropdown-toggle#navbar-page.hover-primary-dark.text-uppercase(href=url)
+                                = name
+                                i.fa.fa-angle-down.ms-1                                
+                            .dropdown-menu.dropdown-menu-xl.border-primary(aria-labelledby="navbar-page")
+                                .row.gx-0
+                                    each submenuItem in submenuItems
+                                        - const { name, listMenuItems } = submenuItem
+                                        .col-lg-4.col-md-4.col-sm-6.col-6
+                                            h6.dropdown-header.text-black.fw-bolder= name
+                                            each listMenuItem in listMenuItems
+                                                - const { name, url } = listMenuItem
+                                                a.dropdown-item.hover-primary-muted(href=url)= name
+        ul.navbar-nav.flex-row.list-unstyled.list-inline.mb-0
+            li.nav-item.dropdown.list-inline-item.mx-3
+                a.text-decoration-none.hover-primary-dark.dropdown-toggle#navbar-cart
+                    i.fa.fa-shopping-cart
+                .dropdown-menu.dropdown-menu-sm.border-primary(aria-labelledby="navbar-cart")
+                    .list-group.list-group-flush.mb-3
+                        a.list-group-item
+                            .icon.icon-sm
+                                img.img-cart-size(src="../assets/images/cart-img.jpg" alt="cart-img")
+                            .ms-4
+                                h6.fw-bold.text-uppercase.text-black.mb-0 Áo sơ mi nam
+                                p.fs-sm.text-gray-700.mb-0.text-primary.text-thirsty 120.000 đ
+                    .list-group.list-group-flush.mb-3
+                        a.list-group-item
+                            .icon.icon-sm
+                                img.img-cart-size(src="../assets/images/cart-img.jpg" alt="cart-img")
+                            .ms-4
+                                h6.fw-bold.text-uppercase.text-black.mb-0 Áo sơ mi nam
+                                p.fs-sm.text-gray-700.mb-0.text-primary.text-thirsty 120.000 đ
+            li.nav-item.list-inline-item.mx-3
+                a.text-decoration-none.hover-primary-dark
+                    i.fa.fa-search

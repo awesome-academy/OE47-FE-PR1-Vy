@@ -1,4 +1,17 @@
 footer {
-    background-color: $color-black
+    background-color: $color-black;
+    .footer-below-section {
+        .footer-below-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .payment-method-right {
+                .paymeny-list {
+                    .payment-item-img {
+                        width: 50px;
+                    }
+                }
+            }
+        }
+    }
 }
-    

@@ -1,6 +1,5 @@
 header {
     .navbar-brand {
-
         .navbar-logo-specials {
             position: relative;
             &::before {
@@ -16,5 +15,15 @@ header {
                 z-index: -1;
             }
         }
+    }
+
+    ul.navbar-nav {
+        .submenuItem-container {
+            padding: 10px;
+        }
+    }
+
+    ul.list-icon-header {
+        order: 1;
     }
 }

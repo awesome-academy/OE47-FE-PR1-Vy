@@ -1,0 +1,30 @@
+@include responsive(phone) {
+    footer {
+        .footer-below-container {
+            flex-direction: column;
+        }
+    }
+}
+
+@include responsive(header) {
+    header {
+        ul.list-icon-header {
+            order: 0 !important;
+            margin-left: auto !important;
+        }
+    }
+
+    .border-primary {
+        border: none !important;
+        position: relative !important;
+        &::before {
+            content: none;
+        }
+    }
+
+    .navbar {
+        .navbar-toggler {
+            margin-left: unset !important;
+        }
+    }
+}

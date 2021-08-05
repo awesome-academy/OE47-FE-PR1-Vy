@@ -1,5 +1,4 @@
 @mixin hover-primary($color) {
-
     color: $color;
     white-space: nowrap;
     font-size: 14px;
@@ -7,8 +6,38 @@
     &:hover {
         color: $color-primary;
     }
-    
 }
+
 @mixin font-size($font-size) {
     font-size: $font-size !important;
+}
+
+@mixin responsive($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: $mobile-width + 1px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == tab-port {
+        @media (max-width: $tablet-width) {
+            @content;
+        }
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: $desktop-width) {
+            @content;
+        }
+    }
+    @if $breakpoint == header {
+        @media (max-width: $header-width - 1px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint == big-desktop {
+        @media (min-width: $desktop-width) {
+            @content;
+        }
+    }
 }

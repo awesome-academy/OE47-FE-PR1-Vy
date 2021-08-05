@@ -2,27 +2,39 @@
     font-family: "ThirstyScriptExtraBoldDemo";
     src: url("../assets/fonts/thirstyscriptregular.otf");
 }
+
 .text-thirsty {
     font-family: "ThirstyScriptExtraBoldDemo";
 }
+
 .hover-primary-light {
     @include hover-primary($color-white);
 }
-.hover-primary-dark {
-    @include hover-primary($color-black);
-}
+
 .hover-primary-muted {
     @include hover-primary($color-muted);
 }
+
+.hover-primary-dark {
+    @include hover-primary($color-black);
+}
+
+.hover-primary-grey {
+    @include hover-primary($color-grey);
+}
+
 .font-size-14 {
     @include font-size($font-size-14);
 }
+
 .font-size-16 {
     @include font-size($font-size-16);
 }
+
 .bg-dark {
     background-color: $color-black !important;
 }
+
 .border-primary {
     border-radius: 0;
     border: none;
@@ -43,19 +55,33 @@
         z-index: 1001;
     }
 }
+
 .border-radius-none {
     border-radius: 0 !important;
 }
+
 .white-space-nowrap {
     white-space: nowrap;
 }
+
 .text-primary {
     color: $color-primary !important;
 }
+
 .w-50 {
     width: 50%;
 }
+
 .img-cart-size {
     width: 50px;
     height: 50px;
+}
+
+.text-grey {
+    color: $color-grey !important;
+}
+
+.btn-black-white {
+    background-color: $color-black;
+    color: $color-white;
 }

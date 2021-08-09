@@ -1,7 +1,14 @@
 @import "base/_variables.scss";
 @import "base/_mixins.scss";
 @import "base/_global.scss";
+@import "base/_owl-custom.scss";
+@import "components/_underline-custom.scss";
+@import "components/_product-item.scss";
+@import "components/_line.scss";
 
 @import "partials/_header.scss";
 @import "partials/_footer.scss";
 @import "base/_responsive.scss";
+@import "pages/_home.scss";
+@import "pages/_product.scss";
+@import "pages/_product-detail.scss";

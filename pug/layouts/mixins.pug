@@ -1,0 +1,17 @@
+mixin section(title, box)
+    section(class=title class=box id=title)
+        block
+
+mixin categoryItems()
+    each categoryItem in categoryItems
+        - const  { title, hasIcon } = categoryItem
+        if(hasIcon)
+            .category-items.categories-items-has-icon
+                p.hover-primary-dark.m-0= title
+        else 
+            .category-items
+                p.hover-primary-dark.m-0= title
+
+mixin product-banner
+    +section("product-banner")
+        img.w-100(src="../assets/images/product/banner-large.png" alt="")

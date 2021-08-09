@@ -1,0 +1,38 @@
+.underline-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .item {
+        margin: 0;
+        background-color: $color-white;
+        overflow: hidden;
+    }
+
+    .item-not-skew {
+        width: 50px;
+        height: 1px;
+    }
+
+    .item-not-skew-left {
+        margin-left: 5px;
+    }
+
+    .item-not-skew-right {
+        margin-right: 5px;
+    }
+
+    .skew-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .item-skew {
+            width: 1px;
+            height: 10px;
+            margin-left: 2px;
+            margin-right: 2px;
+            transform: rotate(30deg);
+        }
+    }
+}

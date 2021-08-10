@@ -1,0 +1,36 @@
+.product-item {
+    .slide-item-img {
+        height: 300px;
+        img {
+            object-fit: cover;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 80%;
+        }
+    }
+
+    .slide-item-content {
+        .slide-item-cart {
+            .button_custom_buy {
+                color: $color-black;
+                border: 1px solid $color-black !important;
+                border-color: $color-black !important;
+                &:hover {
+                    background-color: $color-black;
+                    color: $color-white;
+                }
+            }
+            .button_custom_favourite {
+                color: $color-primary;
+                border: 1px solid $color-primary !important;
+                border-color: $color-primary !important;
+                &:hover {
+                    background-color: $color-primary;
+                    color: $color-white;
+                }
+            }
+        }
+    }
+}

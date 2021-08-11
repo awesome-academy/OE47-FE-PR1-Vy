@@ -5,22 +5,67 @@ block title
 
 block main
     +breadcrumb(["home", "sản phẩm"], "trang sức")
-    +section("product-detail", "py-10")
+    .container
+        +line
+    +section("product-detail", "pt-8 pb-10")
         .container 
+            .row
+                .col-1.d-flex.align-items-center
+                    .div-img-thumbnail-container
+                        .div-img-thumbnail.img-thumbnail-icon.w-100.position-relative.img-thumbnail-icon-above
+                        .div-img-thumbnail.p-1
+                            img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-1.png")
+                        .div-img-thumbnail
+                            img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-2.png")
+                        .div-img-thumbnail
+                            img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-3.png")
+                        .div-img-thumbnail
+                            img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-4.png")
+                        .div-img-thumbnail.img-thumbnail-icon.w-100.position-relative.img-thumbnail-icon-bellow
+                .col-6
+                    .div-img-thumbnail-main.h-100.d-flex.align-items-center
+                        img.main-img(src="../assets/images/product-detail/main-img.png")
+                .col-5.product-detail-content
+                    p.text-black.m-0.fw-bold.font-size-20.text-uppercase Lắc tay
+                    span.text-uppercase.font-size-14 tiffy ms 3201
+                    p.text-thirsty.fw-bold.font-size-24 955.000đ
+                    p.text-muted.font-size-14 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
+                    .div-product-detail-color.d-flex.flex-column.py-2
+                        p.text-black.fw-bold.text-uppercase.py-2 màu sắc
+                        select.text-capitalize.border-gray-800-50.height-40.px-4
+                            option.text-capitalize màu bạc
+                            option.text-capitalize màu vàng hồng 
+                            option.text-capitalize màu mỡ
+                    .div-product-detail-size.d-flex.flex-column.py-2
+                        p.text-black.fw-bold.text-uppercase.py-2 size
+                        select.text-capitalize.border-gray-800-50.height-40.px-4
+                            option.text-capitalize 12
+                            option.text-capitalize 13 
+                            option.text-capitalize 14
+                    .div-product-detail-buy.d-flex.flex-column.py-2
+                        p.text-black.fw-bold.text-uppercase.py-2 số lượng
+                        +purchase("/cart.html", "start")
+                    .div-product-detail-share.d-flex-align-items-center.pt-4
+                        span.font-size-14 Shipping &amp; Returns
+                        img(src="../assets/images/product-detail/img-shipping.png" alt="img-shipping")
+    +section("details")
+        .container
             .row 
-                .col-1
-                    .div-img-thumbnail.img-thumbnail-icon.w-100.position-relative.img-thumbnail-icon-above
-                    .div-img-thumbnail.p-1
-                        img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-1.png")
-                    .div-img-thumbnail
-                        img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-2.png")
-                    .div-img-thumbnail
-                        img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-3.png")
-                    .div-img-thumbnail
-                        img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-4.png")
-                    .div-img-thumbnail.img-thumbnail-icon.w-100.position-relative.img-thumbnail-icon-bellow
-                .col-5
-                    .div-img-thumbnail
-                        img.w-100.main-img(src="../assets/images/product-detail/main-img.png")
-                .col-6.product-detail-content
-                    p.text-black.m-0.fw-bolder.font-size-20.text-uppercase Lắc tay 
+                .col-8
+                    .details-header.d-flex
+                        p.text-uppercase.fw-bolder.me-4 đặc điểm nổi bật
+                        p.text-uppercase.fw-bolder.me-4 thông tin sản phẩm
+                        p.text-uppercase.fw-bolder đánh giá
+                    +line
+                    .details-content
+                        each detailsContentItem in detailsContentItems
+                            +details-content(detailsContentItem)
+                .col-4
+                    .selling-products-1.pb-6
+                        p.text-uppercase.fw-bolder sản phẩm bán chạy 
+                            - for(let i=1; i<=3; i++)
+                                +selling-product-item
+                    .selling-products-2
+                        p.text-uppercase.fw-bolder sản phẩm mua nhiều
+                        - for(let i=1; i<=3; i++)
+                                +selling-product-item

@@ -1,0 +1,13 @@
+.form-contact {
+    input {
+        height: 40px;
+        border: solid 1px $color-line;
+        outline: none;
+        padding: 0 15px;
+    }
+
+    textarea {
+        border: solid 1px $color-line;
+        outline: none;
+    }
+}

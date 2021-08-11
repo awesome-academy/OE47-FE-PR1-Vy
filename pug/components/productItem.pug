@@ -1,6 +1,6 @@
 mixin productItem()
     each productItem in productItems
-        - const { src, alt, brand_name, name, price } = productItem
+        - const { src, alt, brand_name, name, price, url } = productItem
         .product-item.col-lg-4.col-md-4.col-sm-6.col-12
             .slide-item-img.position-relative
                 img(src=src, alt=alt)
@@ -10,9 +10,4 @@ mixin productItem()
                 .d-flex.justify-content-center
                     .line-30.my-2.text-center
                 p.text-primary.text-viceroy.fw-bolder.m-0.pb-3= price
-                .slide-item-cart.d-flex.justify-content-center
-                    a.btn-xs.text-decoration-none.text-uppercase.button_custom_buy.button_custom.white-space-nowrap.me-1.font-size-14 mua hàng
-                    button.btn.btn-xs.button_custom_favourite.button_custom.me-1
-                        i.fa.fa-heart
-                    button.btn.btn-xs.button_custom.button_custom.button_custom_favourite
-                        i.fa.fa-refresh
+                +purchase(url, "center")

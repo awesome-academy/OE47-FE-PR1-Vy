@@ -1,0 +1,26 @@
+extends ../layouts/default-layout.pug
+
+block title
+    title Chi tiết sản phẩm
+
+block main
+    +breadcrumb(["home", "sản phẩm"], "trang sức")
+    +section("product-detail", "py-10")
+        .container 
+            .row 
+                .col-1
+                    .div-img-thumbnail.img-thumbnail-icon.w-100.position-relative.img-thumbnail-icon-above
+                    .div-img-thumbnail.p-1
+                        img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-1.png")
+                    .div-img-thumbnail
+                        img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-2.png")
+                    .div-img-thumbnail
+                        img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-3.png")
+                    .div-img-thumbnail
+                        img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-4.png")
+                    .div-img-thumbnail.img-thumbnail-icon.w-100.position-relative.img-thumbnail-icon-bellow
+                .col-5
+                    .div-img-thumbnail
+                        img.w-100.main-img(src="../assets/images/product-detail/main-img.png")
+                .col-6.product-detail-content
+                    p.text-black.m-0.fw-bolder.font-size-20.text-uppercase Lắc tay 

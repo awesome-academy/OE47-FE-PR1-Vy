@@ -2,11 +2,15 @@ section.product-content#product-content {
     .category-list {
         .category-list-item {
             padding-bottom: 2rem;
+
             .list-categories {
+
                 .list-categories-item {
+
                     .toggle-menu {
                         position: relative;
                     }
+
                     .toggle-menu::before {
                         content: "\f0da";
                         font-family: fontawesome;
@@ -15,15 +19,19 @@ section.product-content#product-content {
                         right: 0;
                         transform: translateY(-50%);
                     }
+
                     input[type="checkbox"] {
                         display: none;
                     }
+
                     input[type="checkbox"]:checked ~ .toggle-menu::before {
                         content: "\f0d7";
                     }
+
                     ul.sub-categories-list {
                         display: none;
                     }
+                    
                     input[type="checkbox"]:checked ~ ul.sub-categories-list {
                         display: block;
                     }

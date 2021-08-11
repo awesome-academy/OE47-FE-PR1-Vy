@@ -3,7 +3,7 @@ extends ../layouts/default-layout.pug
 block title
     title Sản phẩm
 block main
-    +product-breadcrumb
+    +breadcrumb(["home", "sản phẩm"], "trang sức")
     +product-banner
     +section("product-content", "py-10")
         .container 

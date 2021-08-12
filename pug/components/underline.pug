@@ -2,6 +2,6 @@ mixin underline-custom(background)
     .underline-custom.w-100
         p.item.item-not-skew.item-not-skew-right(class=background)
         .skew-container
-            - for (var i = 0; i<10; i++)
+            - for (let i = 0; i<10; i++)
                 p.item-skew.item(class=background)
         p.item.item-not-skew.item-not-skew-left(class=background)

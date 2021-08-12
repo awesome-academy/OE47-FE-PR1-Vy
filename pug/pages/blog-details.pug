@@ -10,6 +10,40 @@ block main
         .container
             h1.text-uppercase.fw-bold blog
             .row 
-                .col-4 
-                    p.text-uppercase bài viết mới nhất 
-                    +line                            
+                .col-3
+                    .lastest-blog
+                        p.text-uppercase bài viết mới nhất 
+                        +line
+                        - for (let i = 1; i < 4; i++)
+                            +blog-detail-item(blogItems[i])
+                    .blog-tag 
+                        p.text-uppercase.fw-bolder blog tags
+                        +line
+                        +productTags
+                    .lastest-video
+                        p.text-uppercase.fw-bolder lastest video
+                        +line
+                        .div-img-lastest-video.py-2
+                            img.w-100(src="../assets/images/blog/blog-details.png" alt="blog-detail")
+                .col-9.blog-detail-content 
+                    .div-img-blog-detail-content
+                        img.w-100(src="../assets/images/blog/blog-img-4.png" alt="blog-detail-content-img")
+                    .div-content-blog-detail-content
+                        h2.text-uppercase.fw-bolder nàng báo không ngại diện váy áo nổi bật
+                        +line
+                        p.font-size-16.text-grey.py-4 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    span.font-size-14.py-2
+                        i Bởi NamTran ( 27 / 05 / 2015)
+                    +line
+                    .div.blog-item-footer.d-flex.justify-content-between.py-2
+                        a.text-grey.d-flex.align-items-center.text-decoration-none.font-size-14 Đọc thêm 
+                            i.fa.fa-caret-right.ms-2 
+                        span.font-size-14.text-grey 23 bình luận
+                    .tag.pt-4
+                        p 
+                            span.text-grey Tag: 
+                            span.text-black Men 
+                        +line
+                    .div-comments.py-8
+                        p.text-uppercase.fw-bolder đóng góp ý kiến
+                        +form(["tên", "email"], ["ý kiến"], "gửi ý kiến")

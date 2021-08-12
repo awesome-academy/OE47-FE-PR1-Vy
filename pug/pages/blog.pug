@@ -1,0 +1,18 @@
+extends ../layouts/default-layout.pug
+
+block title
+    title Tin tức
+
+block main
+    +breadcrumb(["home"], "blog")
+
+    +section("blog-content", "pb-8 pt-4")
+        .container
+            h1.text-uppercase.fw-bold blog
+            +product-header
+            +line
+            .row.blog-grid.pt-4.pb-8
+                each blogItem in blogItems
+                    +blogItem(blogItem)
+            +product-header
+            +line

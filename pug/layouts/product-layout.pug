@@ -1,0 +1,17 @@
+extends ./default-layout.pug
+
+block title
+    title Sản phẩm
+block main
+    +breadcrumb(["home", "sản phẩm"], "trang sức")
+    +product-banner
+    +section("product-content", "py-10")
+        .container 
+            .row
+                +category-list
+                .product-grid.col-lg-9
+                    +product-header
+                    +line
+                    block product-theme 
+                    +product-header
+                    +line

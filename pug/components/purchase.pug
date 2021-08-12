@@ -1,0 +1,7 @@
+mixin purchase(url, position)
+    div(class=`slide-item-cart d-flex justify-content-${position}`)
+        a.btn-xs.text-decoration-none.text-uppercase.button_custom_buy.button_custom.white-space-nowrap.me-2.font-size-14(href=url) mua hàng
+        button.btn-xs.button_custom_favourite.button_custom.me-2
+            i.fa.fa-heart
+        button.btn-xs.button_custom.button_custom.button_custom_favourite
+            i.fa.fa-refresh

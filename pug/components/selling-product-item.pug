@@ -1,0 +1,12 @@
+mixin selling-product-item 
+    +line
+    .selling-product-item.d-flex.justify-content-between.py-4
+        img(src="../assets/images/product-detail/selling-product.png" alt="selling-product")
+        .selling-product-item-content 
+            p.fw-bold.font-size-16 Mỹ phẩm châu Âu
+            p.font-size-14
+                span
+                    +rating("heart", 3)
+                span.text-muted.font-size-14= ` ( 4 đánh giá )`
+            p.text-thirsty.font-size-16.fw-bold 355.000 đ
+    

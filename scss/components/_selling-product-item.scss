@@ -1,0 +1,9 @@
+.selling-product-item {
+    img {
+        width: 100px;
+    }
+    .selling-product-item-content {
+        width: calc(100% - 100px);
+        margin-left: 10px;
+    }
+}

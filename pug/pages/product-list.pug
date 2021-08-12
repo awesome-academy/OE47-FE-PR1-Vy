@@ -1,38 +1,19 @@
-extends ../layouts/default-layout.pug
+extends ../layouts/product-layout.pug
 
-block title
-    title Sản phẩm
-
-block main
-    +breadcrumb(["home", "sản phẩm"], "trang sức")
-    +product-banner
-    +section("product-content", "py-10")
-        .container 
-            .row
-                +category-list
-                .product-grid.col-lg-9
-                    +product-header
-                    +line
-                    .row
-                        each productItem in productItems
-                            - const { src, alt, brand_name, name, price, solds, rates, description } = productItem
-                            .product-item.col-12
-                                .row.align-items-center
-                                    .slide-item-img.position-relative.col-4
-                                        img(src=src, alt=alt)
-                                    .slide-item-content.col-8
-                                        p.text-black.m-0.fw-bolder.font-size-20= name
-                                        p
-                                            span
-                                                +rating(rates)
-                                            span.text-muted.font-size-14= ` ( ${solds} đánh giá )`
-                                        span.font-size-14= description
-                                        p.text-primary.text-viceroy.fw-bolder.m-0.pb-3.font-size-20= price
-                                        .slide-item-cart.d-flex
-                                            a.btn-xs.text-decoration-none.text-uppercase.button_custom_buy.button_custom.white-space-nowrap.me-1.font-size-14 mua hàng
-                                            button.btn.btn-xs.button_custom_favourite.button_custom.me-1
-                                                i.fa.fa-heart
-                                            button.btn.btn-xs.button_custom.button_custom.button_custom_favourite
-                                                i.fa.fa-refresh
-                    +product-header
-                    +line
+block product-theme
+    .row
+        each productItem in productItems
+            - const { src, alt, brand_name, name, price, solds, rates, description, url } = productItem
+            .product-item.col-12
+                .row.align-items-center
+                    .slide-item-img.position-relative.col-4
+                        img(src=src, alt=alt)
+                    .slide-item-content.col-8
+                        p.text-black.m-0.fw-bolder.font-size-20= name
+                        p
+                            span
+                                +rating("star", rates)
+                            span.text-muted.font-size-14= ` ( ${solds} đánh giá )`
+                        span.font-size-14= description
+                        p.text-primary.text-viceroy.fw-bolder.m-0.pb-3.font-size-20= price
+                        +purchase(url, "start")

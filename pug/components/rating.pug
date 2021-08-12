@@ -1,3 +1,6 @@
-mixin rating(rates)
-    - for (var i=0; i<rates; i++)
-        i.fa.fa-star
+mixin rating(icon,rates)
+    - for (let i = 1; i <= 5; i++)
+        if i > rates
+            i.fa.fa-star-o.me-1
+        else
+            i.fa.fa-star.me-1

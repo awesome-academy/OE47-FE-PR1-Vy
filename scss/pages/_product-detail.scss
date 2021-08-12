@@ -1,5 +1,4 @@
 section.product-detail#product-detail {
-
     .main-img {
         width: 100%;
         object-fit: cover;
@@ -27,9 +26,13 @@ section.product-detail#product-detail {
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    
+
+    .div-img-thumbnail-main {
+        border: solid 1px $color-line;
+        cursor: pointer;
+    }
+
     .div-img-thumbnail {
-        border: solid 1px $color-muted !important;
         cursor: pointer;
     }
 }

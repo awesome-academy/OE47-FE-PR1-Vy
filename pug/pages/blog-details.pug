@@ -1,0 +1,15 @@
+extends ../layouts/default-layout.pug
+
+block title
+    title Chi tiết tin tức
+
+block main
+    +breadcrumb(["home"], "tin tức")
+
+    +section("blog-content", "pb-8 pt-4")
+        .container
+            h1.text-uppercase.fw-bold blog
+            .row 
+                .col-4 
+                    p.text-uppercase bài viết mới nhất 
+                    +line                            

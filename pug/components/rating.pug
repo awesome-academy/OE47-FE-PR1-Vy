@@ -1,6 +1,6 @@
 mixin rating(icon,rates)
     - for (let i = 1; i <= 5; i++)
         if i > rates
-            i.fa.fa-star-o.me-1
+            i(class=`fa fa-${icon}-o me-1`)
         else
-            i.fa.fa-star.me-1
+            i(class=`fa fa-${icon} me-1`)

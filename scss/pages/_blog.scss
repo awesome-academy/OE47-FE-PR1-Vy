@@ -1,4 +1,5 @@
-.blog-item {
+.blog-item,
+.blog-detail-content {
     .div-img-blog-item {
         clip-path: polygon(0 0, 100% 0, 100% 90%, 56% 90%, 50% 100%, 44% 90%, 0 90%);
         img {
@@ -6,5 +7,41 @@
             object-fit: cover;
         }
     }
-    
+
+    .div-img-blog-item-details {
+        width: 40%;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 56% 90%, 50% 100%, 44% 90%, 0 90%);
+        img {
+            object-fit: cover;
+        }
+    }
+
+    .div-img-blog-detail-content {
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 56% 90%, 50% 100%, 44% 90%, 0 90%);
+
+        img {
+            object-fit: cover;
+        }
+    }
+}
+
+.blog-content {
+    .lastest-video {
+        .div-img-lastest-video {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .div-img-lastest-video::before {
+            content: "\f144";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            font-family: fontawesome;
+            font-size: 50px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+    }
 }

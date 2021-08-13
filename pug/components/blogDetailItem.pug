@@ -1,0 +1,11 @@
+mixin blog-detail-item(blogItem)
+    - const { imgURL, alt, title, description, author, datetime, comments, url } = blogItem
+    .blog-item.pt-4.d-flex
+        .div-img-blog-item-details.mb-4
+            img.w-100(src=imgURL, alt=alt)
+        div.ps-2
+            p.fw-bolder
+                span.font-size-24 11
+                span.font-size-16 /Tháng 5
+            span.font-size-14
+                i= `Đăng bởi ${author}`

@@ -1,4 +1,4 @@
-section.account {
+section.account, .shopping-cart {
     table.table.table-bordered {
         border-color: $color-line;
         border-spacing: 0;
@@ -26,6 +26,12 @@ section.account {
             font-size: 20px;
             margin-right: 0.5rem;
             font-weight: bold;
+        }
+    }
+
+    .table-shopping-cart {
+        img {
+            width: 120px;
         }
     }
 }

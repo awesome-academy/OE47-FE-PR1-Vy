@@ -4,12 +4,12 @@ mixin form(listInputs, listTextAreas, button)
             .form-group.row.align-items-center
                 label.col-3.col-form-label.fw-bold.text-capitalize= `${listInput} *`
                 .col-9
-                    input.form-control-plaintext(type='text')
+                    input.form-control-plaintext.input_custom(type='text')
         each listTextArea in listTextAreas
             .form-group.row.align-items-start
                 label.col-3.col-form-label.fw-bold.text-capitalize= `${listTextArea} *`
                 .col-9
-                    textarea.form-control-plaintext.px-4(rows="5")
+                    textarea.form-control-plaintext.px-4.input_custom(rows="5")
 
             .form-group.row.justify-content-end
                 .col-9

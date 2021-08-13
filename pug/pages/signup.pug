@@ -1,0 +1,39 @@
+extends ../layouts/default-layout.pug
+
+block title
+    title Đăng ký
+
+block main 
+    +breadcrumb(["home"], "đăng ký")
+    .container.py-8
+        .pb-4
+            h2.text-uppercase đăng ký
+        .form-signin.form-signup.p-8
+            .div-information-profile
+                p.text-uppercase.fw-bold.font-size-20.pb-2 thông tin cá nhân
+                .form-group
+                    label.font-size-14.fw-bold.form-input-require(for='firstname') Tên trước
+                    input#firstname.form-control-plaintext.input_custom(type='email' aria-describedby='firstnameHelp')
+                .form-group
+                    label.font-size-14.fw-bold.form-input-require(for='lastname') Tên sau
+                    input#lastname.form-control-plaintext.input_custom(type='email' aria-describedby='lastnameHelp')
+                .form-group
+                    label.font-size-14.fw-bold.form-input-require(for='email') Email
+                    input#email.form-control-plaintext.input_custom(type='email' aria-describedby='emailHelp')
+                .form-group
+                    label.font-size-14.fw-bold.form-input-require(for='pasword') Password
+                    input#pasword.form-control-plaintext.input_custom(type='password')
+                .form-group.form-check
+                    input#exampleCheck1.form-check-input(type='checkbox')
+                    label.form-check-label(for='exampleCheck1') Đăng ký nhập bản tin
+            .div-information-authenticate
+                p.text-uppercase.fw-bold.font-size-20.pb-2 thông tin đăng nhập
+                .form-group
+                    label.font-size-14.fw-bold.form-input-require(for='pasword') Mật khẩu
+                    input#pasword.form-control-plaintext.input_custom(type='password')
+                .form-group
+                    label.font-size-14.fw-bold.form-input-require(for='pasword') Xác nhận mật khẩu
+                    input#pasword.form-control-plaintext.input_custom(type='password')
+                .form-group.d-flex.py-4.justify-content-between
+                    .btn-black-white.btn-xs.text-uppercase.border-radius-none(type='submit') gửi
+                    a.btn-black-white.btn-xs.text-uppercase.border-radius-none.text-decoration-none(type='submit' href="./signin.html") quay lại

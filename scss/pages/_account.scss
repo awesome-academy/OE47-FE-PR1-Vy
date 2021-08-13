@@ -1,0 +1,31 @@
+section.account {
+    table.table.table-bordered {
+        border-color: $color-line;
+        border-spacing: 0;
+        border-collapse: collapse;
+        overflow: hidden;
+        z-index: 1;
+        tr {
+            background: $color-line;
+            height: 40px;
+            vertical-align: middle;
+        }
+        
+        td,
+        th,
+        .row,
+        .col {
+            cursor: pointer;
+            padding: 10px;
+            position: relative;
+        }
+    }
+
+    .div-information {
+        .div-information-icon {
+            font-size: 20px;
+            margin-right: 0.5rem;
+            font-weight: bold;
+        }
+    }
+}

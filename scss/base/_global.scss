@@ -208,3 +208,28 @@ p {
 .text-left {
     text-align: left;
 }
+
+.form-input-require {
+    position: relative;
+    padding-right: 1rem;
+}
+
+.form-input-require::before {
+    position: absolute;
+    content: "*";
+    top: 0;
+    right: 0;
+    color: red;
+}
+
+.text-price {
+    position: relative;
+    padding-right: 0.5rem;
+}
+
+.text-price::before {
+    position: absolute;
+    content: "đ";
+    top: 0;
+    right: 0;
+}

@@ -1,0 +1,13 @@
+.form-signin {
+    background-color: $backgrund-form-email;
+    input[type="text"],
+    input[type="email"],
+    input[type="password"]
+     {
+        height: 40px;
+        border: solid 1px $color-line;
+        outline: none;
+        padding: 0 15px;
+        background-color: $color-white;
+    }
+}

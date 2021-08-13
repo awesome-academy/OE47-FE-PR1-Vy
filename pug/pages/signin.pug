@@ -1,0 +1,23 @@
+extends ../layouts/default-layout.pug
+
+block title
+    title Đăng nhập
+
+block main 
+    +breadcrumb(["home"], "đăng nhập")
+    .container.py-8
+        .d-flex.align-items-center.justify-content-between.pb-4
+            h2.text-uppercase đăng nhập
+            a.btn-black-white.btn-xs.text-uppercase.border-radius-none.text-decoration-none(href="./signup.html") đăng ký
+        .form-signin.p-8
+            p.text-uppercase.fw-bold.font-size-20.pb-2 khách hàng đăng ký
+            p.font-size-14.pb-6 Nếu bạn có một tài khoản, xin vui lòng đăng nhập
+            .form-group
+                label.font-size-14.fw-bold.form-input-require(for='exampleInputEmail1') Địa chỉ Email
+                input#exampleInputEmail1.form-control-plaintext.input_custom(type='email' aria-describedby='emailHelp')
+            .form-group
+                label.font-size-14.fw-bold.form-input-require(for='exampleInputPassword1') Password
+                input#exampleInputPassword1.form-control-plaintext.input_custom(type='password')
+            .form-group.d-flex.py-4
+                p.me-4 Quên Mật Khẩu ?
+                .btn-black-white.btn-xs.text-uppercase.border-radius-none(type='submit') đăng nhập

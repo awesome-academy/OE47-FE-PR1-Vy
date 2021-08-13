@@ -1,0 +1,52 @@
+extends ../layouts/default-layout.pug
+
+block title
+    title Tài khoản
+
+block main 
+    +breadcrumb(["home"], "tài khoản")
+
+    +section("account", "pb-8 pt-4")
+        .container
+            .row
+                .col-9 
+                    h2.text-uppercase.fw-bold tài khoản
+                .col-3 
+                    p.text-uppercase.fw-bolder chi tiết tài khoản
+
+            .row 
+                .col-9
+                    table.table.table-bordered.font-size-14.text-center
+                        thead
+                            tr
+                                th(scope='col') Order 
+                                th(scope='col') Date
+                                th(scope='col') Tình trạng thanh toán
+                                th(scope='col') Tổng
+                                th(scope='col') Nợ
+                        tbody
+                            each transactionDetailItem in transactionDetailItems
+                                - const { orderId, date, paymentStatus, total, owe } = transactionDetailItem
+                                tr
+                                    th(scope='row')= orderId
+                                    td= date
+                                    td.text-danger= paymentStatus
+                                    td
+                                        p.text-price= total
+                                    td= owe
+                .col-3
+                    +line
+                    .div-information.font-size-16
+                        .div-name.d-flex.justify-contet-between.align-items-center.pt-4
+                            .fa.fa-user.div-information-icon
+                            .div-name-content 
+                                p.text-capitalize.div-name-content-name giang le
+                                p.text-capitalize.div-name-content-emial leanhgiang89@gmail.com
+                        .div-address.d-flex.justify-contet-between.align-items-center.pt-4
+                            .fa.fa-map-marker.div-information-icon
+                            .div-address-content 
+                                p.text-capitalize Tòa nhà Hà Nội Group 442 Đội Cấn, Ba Đình, Hà Nội                              
+                        .div-phone.d-flex.justify-contet-between.align-items-center.pt-4
+                            .fa.fa-phone.div-information-icon
+                            .div-phone-content 
+                                p.text-capitalize (04) 3786 8904

@@ -1,6 +1,5 @@
 @import "base/_variables.scss";
 @import "base/_mixins.scss";
-// @import "base/_reset.scss";
 @import "base/_global.scss";
 @import "base/_owl-custom.scss";
 @import "components/_underline-custom.scss";
@@ -9,6 +8,7 @@
 @import "components/_purchase.scss";
 @import "components/_selling-product-item.scss";
 @import "components/_logo.scss";
+@import "components/_newsletter-popup.scss";
 
 @import "partials/_header.scss";
 @import "partials/_footer.scss";
@@ -21,3 +21,5 @@
 @import "pages/_signin.scss";
 @import "pages/_signup.scss";
 @import "pages/_account.scss";
+@import "pages/_shoppingcart.scss";
+@import "pages/_404page.scss";

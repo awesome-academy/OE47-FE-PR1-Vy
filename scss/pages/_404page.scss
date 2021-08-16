@@ -1,0 +1,25 @@
+.page_404 {
+    height: 100vh;
+    .title {
+        letter-spacing: 1.5px;
+    }
+
+    .div-404-input {
+        .div-404-input-container {
+            position: relative;
+
+            input {
+                border-radius: 25px;
+                border-color: $color-muted;
+            }
+        }
+        .div-404-input-container::before {
+            content: "\f002";
+            font-family: fontawesome;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(-100%, -50%);
+        }
+    }
+}

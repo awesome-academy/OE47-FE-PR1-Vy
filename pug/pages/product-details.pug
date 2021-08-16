@@ -10,25 +10,27 @@ block main
     +section("product-detail", "pt-8 pb-10")
         .container 
             .row
-                .col-1.d-flex.align-items-center
-                    .div-img-thumbnail-container
-                        .div-img-thumbnail.img-thumbnail-icon.w-100.position-relative.img-thumbnail-icon-above
-                        .div-img-thumbnail.p-1
-                            img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-1.png")
-                        .div-img-thumbnail
-                            img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-2.png")
-                        .div-img-thumbnail
-                            img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-3.png")
-                        .div-img-thumbnail
-                            img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-4.png")
-                        .div-img-thumbnail.img-thumbnail-icon.w-100.position-relative.img-thumbnail-icon-bellow
-                .col-6
-                    .div-img-thumbnail-main.h-100.d-flex.align-items-center
-                        img.main-img(src="../assets/images/product-detail/main-img.png")
-                .col-5.product-detail-content
+                .col-xl-7.col-lg-7.col-md-12.col-sm-12.col-12
+                    .row.h-100.g-0
+                        .col-2.d-flex.align-items-center
+                            .div-img-thumbnail-container
+                                .div-img-thumbnail.img-thumbnail-icon.w-100.position-relative.img-thumbnail-icon-above
+                                .div-img-thumbnail.p-1
+                                    img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-1.png")
+                                .div-img-thumbnail
+                                    img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-2.png")
+                                .div-img-thumbnail
+                                    img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-3.png")
+                                .div-img-thumbnail
+                                    img.w-100.p-2(src="../assets/images/product-detail/img-thumbnail-4.png")
+                                .div-img-thumbnail.img-thumbnail-icon.w-100.position-relative.img-thumbnail-icon-bellow
+                        .col-10
+                            .div-img-thumbnail-main.h-100.d-flex.align-items-center
+                                img.main-img(src="../assets/images/product-detail/main-img.png")
+                .col-xl-5.col-lg-5.col-md-12.col-sm-12.col-12.product-detail-content
                     p.text-black.m-0.fw-bold.font-size-20.text-uppercase Lắc tay
                     span.text-uppercase.font-size-14 tiffy ms 3201
-                    p.text-thirsty.fw-bold.font-size-24.text-price 955.000
+                    +div-price-large("955.000")
                     p.text-muted.font-size-14 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.
                     .div-product-detail-color.d-flex.flex-column.py-2
                         p.text-black.fw-bold.text-uppercase.py-2 màu sắc
@@ -44,23 +46,23 @@ block main
                             option.text-capitalize 14
                     .div-product-detail-buy.d-flex.flex-column.py-2
                         p.text-black.fw-bold.text-uppercase.py-2 số lượng
-                        +purchase("/cart.html", "start")
+                        +purchase("/shoppingcart.html", "start")
                     .div-product-detail-share.d-flex-align-items-center.pt-4
                         span.font-size-14 Shipping &amp; Returns
                         img(src="../assets/images/product-detail/img-shipping.png" alt="img-shipping")
     +section("details")
         .container
             .row 
-                .col-8
-                    .details-header.d-flex
-                        p.text-uppercase.fw-bolder.me-4 đặc điểm nổi bật
-                        p.text-uppercase.fw-bolder.me-4 thông tin sản phẩm
-                        p.text-uppercase.fw-bolder đánh giá
+                .col-xl-8.col-lg-8.col-md-12.col-sm-12.col-12
+                    .details-header
+                        p.text-uppercase.fw-bolder.me-4.d-inline-block đặc điểm nổi bật
+                        p.text-uppercase.fw-bolder.me-4.d-inline-block thông tin sản phẩm
+                        p.text-uppercase.fw-bolder.d-inline-block đánh giá
                     +line
                     .details-content
                         each detailsContentItem in detailsContentItems
                             +details-content(detailsContentItem)
-                .col-4
+                .col-xl-4.col-lg-4.selling-products
                     .selling-products-1.pb-6
                         p.text-uppercase.fw-bolder sản phẩm bán chạy 
                             - for(let i=1; i<=3; i++)

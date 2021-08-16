@@ -1,4 +1,4 @@
-section.product-detail#product-detail {
+section.product-detail {
     .main-img {
         width: 100%;
         object-fit: cover;
@@ -34,5 +34,49 @@ section.product-detail#product-detail {
 
     .div-img-thumbnail {
         cursor: pointer;
+    }
+}
+
+section.details {
+    .selling-products {
+        @include responsive("medium") {
+            display: none;
+        }
+    }
+    .details-header {
+        @include responsive("medium") {
+            overflow-x: scroll;
+            overflow: scroll;
+            overflow-y: hidden;
+            width: 300px;
+            white-space: nowrap;
+        }
+        
+    }
+
+    .details-header::-webkit-scrollbar {
+            width: 0;
+            background: transparent;
+        }
+
+    .details-content-1 {
+        .details-content-image-even {
+            order: 2;
+            @include responsive("medium") {
+                order: 1;
+            }
+        }
+        .details-content-text-even {
+            order: 1;
+            @include responsive("medium") {
+                order: 2;
+            }
+        }
+        img {
+            width: 100%;
+            @include responsive("medium") {
+                width: 60%;
+            }
+        }
     }
 }

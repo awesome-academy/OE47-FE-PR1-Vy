@@ -1,0 +1,25 @@
+extends ../layouts/default-layout.pug
+
+block title
+    title 404
+
+block header
+    - headerPresentation = false
+
+block main
+    +section("page_404")
+        .container.h-100
+            .row.justify-content-center.align-items-center.h-100
+                .col-6
+                    img.w-100(src="../assets/images/404-img.png" alt="404-img")
+                    .div-404-content.py-10.text-center
+                        p.title Đây không phải là trang web bạn đang tìm kiếm
+                        .div-404-input
+                            .div-404-input-container.py-4
+                                input.w-100(type="text")
+                        .d-flex.align-items-center.justify-content-center
+                            a.text-uppercase.text-black.text-decoration-none.mx-4(href="/contact.html") liên hệ
+                            span |
+                            a.text-uppercase.text-black.text-decoration-none.mx-4(href="/") trang chủ
+block footer
+    - footerPresentation = false

@@ -37,6 +37,13 @@ section.product-content#product-content {
                     }
                 }
             }
+
+            img {
+                width: 50%;
+                @include responsive("large") {
+                    display: none;
+                }
+            }
         }
     }
 }

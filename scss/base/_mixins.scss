@@ -14,30 +14,30 @@
 }
 
 @mixin responsive($breakpoint) {
-    @if $breakpoint == phone {
-        @media (max-width: $mobile-width + 1px) {
+    @if($breakpoint == "extra-small") {
+        @media (min-width: $extra-small-width) {
             @content;
         }
     }
 
-    @if $breakpoint == tab-port {
-        @media (max-width: $tablet-width) {
+    @if($breakpoint == "small") {
+        @media (max-width: $small-width) {
             @content;
         }
     }
-    @if $breakpoint == tab-land {
-        @media (max-width: $desktop-width) {
+    @if($breakpoint == "medium") {
+        @media (max-width: $medium-width) {
             @content;
         }
     }
-    @if $breakpoint == header {
-        @media (max-width: $header-width - 1px) {
+    @if($breakpoint == "large") {
+        @media (max-width: $large-width - 1px) {
             @content;
         }
     }
 
-    @if $breakpoint == big-desktop {
-        @media (min-width: $desktop-width) {
+    @if($breakpoint == "extra-large") {
+        @media (min-width: $extra-largep-width) {
             @content;
         }
     }

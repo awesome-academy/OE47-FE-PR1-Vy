@@ -2,14 +2,15 @@ mixin details-content(detailsContentItem)
     - const { title, description, imageURL, alt, key } = detailsContentItem
     .row.details-content-1.py-6.align-items-center
         if(key%2!=0)
-            .col-8
+            .col-xl-4.col-lg-4.col-md-12.col-sm-12.col-12.details-content-image-even
+                img(src=imageURL alt=alt)
+            .col-xl-8.col-lg-8.col-md-12.col-sm-12.col-12.text-left.details-content-text-even
                 p.text-muted.text-uppercase.fw-bold.font-size-16= title
                 p.text-muted.font-size-14= description
-            .col-4
-                img.w-100(src=imageURL alt=alt)
         else
-            .col-4
-                img.w-100(src=imageURL alt=alt) 
-            .col-8
+            .col-xl-4.col-lg-4.col-md-12.col-sm-12.col-12.details-content-image-odd
+                img(src=imageURL alt=alt)
+            .col-xl-8.col-lg-8.col-md-12.col-sm-12.col-12.text-right.details-content-text-odd
                 p.text-muted.text-uppercase.fw-bold.font-size-16= title
                 p.text-muted.font-size-14= description
+            

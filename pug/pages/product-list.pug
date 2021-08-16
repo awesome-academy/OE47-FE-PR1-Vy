@@ -15,5 +15,5 @@ block product-theme
                                 +rating("star", rates)
                             span.text-muted.font-size-14= ` ( ${solds} đánh giá )`
                         span.font-size-14= description
-                        p.text-primary.text-viceroy.fw-bolder.m-0.pb-3.font-size-20= price
+                        +div-price-small(price)
                         +purchase(url, "start")

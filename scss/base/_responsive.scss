@@ -1,4 +1,4 @@
-@include responsive(phone) {
+@include responsive("small") {
     footer {
         .footer-below-container {
             flex-direction: column;
@@ -6,7 +6,7 @@
     }
 }
 
-@include responsive(header) {
+@include responsive("medium-width") {
     header {
         ul.list-icon-header {
             order: 0 !important;

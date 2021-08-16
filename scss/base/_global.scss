@@ -7,6 +7,10 @@
     src: url("../assets/fonts/ViceroyJF.ttf");
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .height-40 {
     height: 40px !important;
 }
@@ -76,20 +80,12 @@ p {
     font-family: "Viceroy";
 }
 
-.w-50px {
-    width: 50px;
-}
-
 .background-primary {
     background-color: $color-primary;
 }
 
 .text-viceroy {
     font-family: "Viceroy";
-}
-
-.w-50px {
-    width: 50px;
 }
 
 .background-primary {
@@ -169,10 +165,6 @@ p {
     color: $color-primary !important;
 }
 
-.w-50 {
-    width: 50%;
-}
-
 .img-cart-size {
     width: 50px;
     height: 50px;
@@ -224,13 +216,16 @@ p {
 
 .text-price {
     position: relative;
+    padding-right: 1rem;
 }
 
 .text-price::before {
     position: absolute;
     content: "đ";
-    top: 0;
+    margin-left: 0.5rem;
+    top: 50%;
     right: 0;
+    transform: translateY(-50%);
 }
 
 input[type="text"],

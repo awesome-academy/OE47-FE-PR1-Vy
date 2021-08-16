@@ -8,30 +8,31 @@ block main
     +section("shopping-cart", "pt-4 pb-10")
         .container
             h2.text-uppercase.fw-bold giỏ hàng
-            table.table.table-bordered.font-size-14.text-center.table-shopping-cart
-                thead
-                    tr.text-uppercase
-                        th(scope='col') ảnh 
-                        th(scope='col') tên sản phẩm
-                        th(scope='col') giá
-                        th(scope='col') số lượng
-                        th(scope='col') tổng số
-                        th(scope='col') xóa
-                tbody
-                    each shoppingCartItem in shoppingCartItems
-                        - const { imgURL, name, price, alt } = shoppingCartItem
-                        tr
-                            td.w-25
-                                img(src=imgURL, alt=alt)
-                            td= name
-                            td
-                                p.text-price.text-thirsty= price
-                            td
-                                input.form-control-plaintext.input_custom(type="number" value="1" min=1)
-                            td
-                                p.text-price.text-thirsty= price
-                            td 
-                                i.fa.fa-trash
+            .dataTable-container
+                table.table.table-bordered.font-size-14.text-center.table-shopping-cart
+                    thead
+                        tr.text-uppercase
+                            th(scope='col') ảnh 
+                            th(scope='col') tên sản phẩm
+                            th(scope='col') giá
+                            th(scope='col') số lượng
+                            th(scope='col') tổng số
+                            th(scope='col') xóa
+                    tbody
+                        each shoppingCartItem in shoppingCartItems
+                            - const { imgURL, name, price, alt } = shoppingCartItem
+                            tr
+                                td.w-25
+                                    img(src=imgURL, alt=alt)
+                                td= name
+                                td
+                                    +div-price-small(price)
+                                td
+                                    input.form-control-plaintext.input_custom(type="number" value="1" min=1)
+                                td
+                                     +div-price-small(price)
+                                td 
+                                    i.fa.fa-trash
             .div-button.text-right.mt-8
                 a.btn-black-white.btn-xs.text-uppercase.border-radius-none.text-decoration-none(href="./product-list.html") tiếp tục mua hàng
                 a.btn-black-white.btn-xs.text-uppercase.border-radius-none.text-decoration-none.ms-2(href="./signin.html") xóa

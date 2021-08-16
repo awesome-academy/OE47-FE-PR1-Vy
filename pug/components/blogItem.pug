@@ -1,6 +1,6 @@
 mixin blogItem(blogItem)
     - const { imgURL, alt, title, description, author, datetime, comments, url } = blogItem
-    .col-4.blog-item.py-6
+    .col-lg-4.col-md-6.col-sm-12.col-12.blog-item.py-6
         .div-img-blog-item.mb-4
             img.w-100(src=imgURL, alt=alt)
         p.font-size-16.text-uppercase.fw-bold= title 

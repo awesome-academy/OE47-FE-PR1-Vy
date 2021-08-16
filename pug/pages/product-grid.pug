@@ -2,4 +2,5 @@ extends ../layouts/product-layout.pug
 
 block product-theme
     .row
-        +productItem()
+        each productItem in productItems
+            +productItem(productItem)

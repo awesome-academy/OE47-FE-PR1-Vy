@@ -32,8 +32,9 @@ block main
                                     td= date
                                     td.text-danger= paymentStatus
                                     td
-                                        p.text-price= total
-                                    td= owe
+                                        +div-price-small(total)
+                                    td
+                                        +div-price-small(owe)
                 .col-3
                     +line
                     .div-information.font-size-16

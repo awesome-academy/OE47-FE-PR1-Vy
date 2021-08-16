@@ -26,22 +26,27 @@
 }
 
 .blog-content {
-    .lastest-video {
-        .div-img-lastest-video {
-            position: relative;
-            cursor: pointer;
-        }
+    .blog-detail-menu {
+        .lastest-video {
+            .div-img-lastest-video {
+                position: relative;
+                cursor: pointer;
+            }
 
-        .div-img-lastest-video::before {
-            content: "\f144";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            font-family: fontawesome;
-            font-size: 50px;
-            color: rgba(0, 0, 0, 0.5);
+            .div-img-lastest-video::before {
+                content: "\f144";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 0;
+                font-family: fontawesome;
+                font-size: 50px;
+                color: rgba(0, 0, 0, 0.5);
+            }
+        }
+        @include responsive("medium") {
+            display: none;
         }
     }
 }

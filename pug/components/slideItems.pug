@@ -1,11 +1,21 @@
 mixin slideItems(listItem)
-    - const { src, alt, brand_name, name, price, url } = listItem
-    .product-item.slider-subtitle.col-lg-4.col-md-4.col-sm-6.col-12
+    - const { src, alt, brand_name, name, price, url, active } = listItem
+        if(active == true)
+            .carousel-item.active
+                +slideItemContent(src, alt, brand_name, name, price, url)
+
+        else
+            .carousel-item
+                +slideItemContent(src, alt, brand_name, name, price, url)
+
+mixin slideItemContent(src, alt, brand_name, name, price, url)
+    .product-item.col-lg-2.d-inline-block
         .slide-item-img.position-relative
-            img(src=src, alt=alt)
-        img(src=src, alt=alt)
+            img.img-fluid(src=src, alt=alt)
         .slide-item-content.text-center.pt-4
-            p.text-uppercase.text-grey.m-0= brand_name
+            span.font-size-14.text-uppercase.text-grey.m-0.fw-bold= brand_name
             p.text-black.m-0= name
-            p.text-primary.text-viceroy.fw-bolder.m-0= price
+            .d-flex.justify-content-center
+                .line-30.my-2.text-center
+            +div-price-small(price)
             +purchase(url, "center")

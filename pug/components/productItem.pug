@@ -1,13 +1,12 @@
-mixin productItem()
-    each productItem in productItems
-        - const { src, alt, brand_name, name, price, url } = productItem
-        .product-item.col-lg-4.col-md-4.col-sm-6.col-12
-            .slide-item-img.position-relative
-                img(src=src, alt=alt)
-            .slide-item-content.text-center.pt-4
-                span.font-size-14.text-uppercase.text-grey.m-0.fw-bold= brand_name
-                p.text-black.m-0= name
-                .d-flex.justify-content-center
-                    .line-30.my-2.text-center
-                p.text-primary.text-viceroy.fw-bolder.m-0.pb-3= price
-                +purchase(url, "center")
+mixin productItem(productItem)
+    - const { src, alt, brand_name, name, price, url } = productItem
+    .product-item.col-lg-4.col-md-4.col-sm-6.col-6
+        .slide-item-img.position-relative
+            img(src=src, alt=alt)
+        .slide-item-content.text-center.pt-4
+            span.font-size-14.text-uppercase.text-grey.m-0.fw-bold= brand_name
+            p.text-black.m-0= name
+            .d-flex.justify-content-center
+                .line-30.my-2.text-center
+            +div-price-small(price)
+            +purchase(url, "center")

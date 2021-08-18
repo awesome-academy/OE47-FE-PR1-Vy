@@ -1,7 +1,9 @@
-mixin pagination 
+mixin pagination(totalPage)
     .div-paginations.d-flex.align-items-center.align-items-center
         i.fa.fa-caret-left.me-3
-        span.me-3.fw-bolder.font-size-14 1
-        span.me-3.font-size-14 2
-        span.me-3.font-size-14 3
+        - for( let i = 1; i<=totalPage; i++)
+            if(i == 1)
+                span.me-3.fw-bolder.font-size-14= i
+            else 
+                span.me-3.font-size-14= i
         i.fa.fa-caret-right

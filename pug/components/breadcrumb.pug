@@ -5,8 +5,11 @@ mixin breadcrumb(items, last)
                 nav(aria-label='breadcrumb')
                     ol.breadcrumb
                         each item in items
-                            li.breadcrumb-item
-                                a.text-black.text-capitalize(href='#')= item
+                            each breadcrumbItem in breadcrumbItems
+                                - const { name, url } = breadcrumbItem
+                                    if(item == name)
+                                        li.breadcrumb-item
+                                            a.text-black.text-capitalize.text-decoration-none(href= (item === "home" ? url : `${url}.html`) )= item
                         if(last)
                             li.breadcrumb-item.active.text-primary.text-capitalize(aria-current='page')= last
             +line

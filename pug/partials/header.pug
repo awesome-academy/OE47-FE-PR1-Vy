@@ -1,57 +1,56 @@
-header.navbar-expand-lg.navbar#header
-    div.container
-        a.navbar-brand.text-uppercase(href="/")
-            span.text-white.navbar-logo-specials.me-3.text-thirsty M
-            span.text-black.text-lowercase.text-thirsty andala
+if (headerPresentation)
+    header.navbar-expand-lg.navbar#header
+        div.container
+            +logo
 
-        ul.navbar-nav.flex-row.list-unstyled.list-inline.mb-0.list-icon-header
-            li.nav-item.dropdown.list-inline-item.mx-3
-                a.text-decoration-none.hover-primary-dark.dropdown-toggle#navbar-cart(href="./shoppingcart.html")
-                    i.fa.fa-shopping-cart
-                .dropdown-menu.dropdown-menu-sm.border-primary(aria-labelledby="navbar-cart")
-                    .cart-list
-                        each cartItem in cartItems
-                            - const { imgUrl, name, price, alt } = cartItem                            
-                            .list-group.list-group-flush.mb-3
-                                a.list-group-item
-                                    .icon.icon-sm
-                                        img.img-cart-size(src=imgUrl alt=alt)
-                                    .ms-4
-                                        h6.fw-bold.text-uppercase.text-black.mb-0= name
-                                        +div-price-small(price)
-                    .cart-total 
-                        p.d-flex.justify-content-between
-                            span.text-black Tổng số
-                            +div-price-small("240.000")
-                    button.btn.btn-black-white.btn-xs.text-uppercase.border-radius-none Giỏ hàng
-            li.nav-item.list-inline-item.mx-3
-                a.text-decoration-none.hover-primary-dark
-                    i.fa.fa-search
+            ul.navbar-nav.flex-row.list-unstyled.list-inline.mb-0.list-icon-header
+                li.nav-item.dropdown.list-inline-item.mx-3
+                    a.text-decoration-none.hover-primary-dark.dropdown-toggle#navbar-cart(href="./shoppingcart.html")
+                        i.fa.fa-shopping-cart
+                    .dropdown-menu.dropdown-menu-sm.border-primary(aria-labelledby="navbar-cart")
+                        .cart-list
+                            each cartItem in cartItems
+                                - const { imgUrl, name, price, alt } = cartItem                            
+                                .list-group.list-group-flush.mb-3
+                                    a.list-group-item
+                                        .icon.icon-sm
+                                            img.img-cart-size(src=imgUrl alt=alt)
+                                        .ms-4
+                                            h6.fw-bold.text-uppercase.text-black.mb-0= name
+                                            +div-price-small(price)
+                        .cart-total 
+                            p.d-flex.justify-content-between
+                                span.text-black Tổng số
+                                +div-price-small("240.000")
+                        button.btn.btn-black-white.btn-xs.text-uppercase.border-radius-none Giỏ hàng
+                li.nav-item.list-inline-item.mx-3
+                    a.text-decoration-none.hover-primary-dark
+                        i.fa.fa-search
 
-        button.navbar-toggler.border-radius-none.text-white.bg-dark(type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation")
-            span.text-white.fa.fa-bars
+            button.navbar-toggler.border-radius-none.text-white.bg-dark(type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation")
+                span.text-white.fa.fa-bars
 
-        div.collapse.navbar-collapse.flex-grow-0#navbarCollapse
-            button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation")
-                i.fa.fa-times
-            ul.navbar-nav
-                each navbarItem in navbarItems
-                    - const { url, name, hasSubmenu, submenuItems } = navbarItem
-                    if(!hasSubmenu)
-                        li.nav-item
-                            a.nav-link(href=url).hover-primary-dark.text-uppercase= name
-                    else 
-                        li.nav-item.dropdown
-                            a.nav-link.dropdown-toggle#navbar-page.hover-primary-dark.text-uppercase(href=url)
-                                = name
-                                i.fa.fa-angle-down.ms-1                                
-                            .dropdown-menu.dropdown-menu-xl.border-primary(aria-labelledby="navbar-page")
-                                .row.gx-0
-                                    each submenuItem in submenuItems
-                                        - const { name, listMenuItems } = submenuItem
-                                        .col-lg-4.col-md-4.col-sm-6.col-6
-                                            .submenuItem-container
-                                                h6.dropdown-header.text-black.fw-bolder= name
-                                                each listMenuItem in listMenuItems
-                                                    - const { name, url } = listMenuItem
-                                                    a.dropdown-item.hover-primary-muted(href=url)= name 
+            div.collapse.navbar-collapse.flex-grow-0#navbarCollapse
+                button.navbar-toggler(type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation")
+                    i.fa.fa-times
+                ul.navbar-nav
+                    each navbarItem in navbarItems
+                        - const { url, name, hasSubmenu, submenuItems } = navbarItem
+                        if(!hasSubmenu)
+                            li.nav-item
+                                a.nav-link(href=url).hover-primary-dark.text-uppercase= name
+                        else 
+                            li.nav-item.dropdown
+                                a.nav-link.dropdown-toggle#navbar-page.hover-primary-dark.text-uppercase(href=url)
+                                    = name
+                                    i.fa.fa-angle-down.ms-1                                
+                                .dropdown-menu.dropdown-menu-xl.border-primary(aria-labelledby="navbar-page")
+                                    .row.gx-0
+                                        each submenuItem in submenuItems
+                                            - const { name, listMenuItems } = submenuItem
+                                            .col-lg-4.col-md-4.col-sm-6.col-6
+                                                .submenuItem-container
+                                                    h6.dropdown-header.text-black.fw-bolder= name
+                                                    each listMenuItem in listMenuItems
+                                                        - const { name, url } = listMenuItem
+                                                        a.dropdown-item.hover-primary-muted(href=url)= name

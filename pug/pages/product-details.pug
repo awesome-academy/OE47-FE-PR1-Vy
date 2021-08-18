@@ -53,15 +53,28 @@ block main
     +section("details")
         .container
             .row 
-                .col-xl-8.col-lg-8.col-md-12.col-sm-12.col-12
-                    .details-header
-                        p.text-uppercase.fw-bolder.me-4.d-inline-block đặc điểm nổi bật
-                        p.text-uppercase.fw-bolder.me-4.d-inline-block thông tin sản phẩm
-                        p.text-uppercase.fw-bolder.d-inline-block đánh giá
+                .col-xl-8.col-lg-8.col-md-12.col-sm-12.col-12.group-tabs
+                    ul.nav.nav-pills(role='tablist')
+                        li.active(role='presentation')
+                            a(href='#home' aria-controls='home' role='tab' data-toggle='tab')
+                                p.text-uppercase.fw-bolder.me-4.d-inline-block.text-black đặc điểm nổi bật
+                        li(role='presentation')
+                            a(href='#profile' aria-controls='profile' role='tab' data-toggle='tab')
+                                p.text-uppercase.fw-bolder.me-4.d-inline-block.text-black thông tin sản phẩm
+                        li(role='presentation')
+                            a(href='#messages' aria-controls='messages' role='tab' data-toggle='tab')
+                                p.text-uppercase.fw-bolder.d-inline-block.text-black đánh giá
                     +line
-                    .details-content
-                        each detailsContentItem in detailsContentItems
-                            +details-content(detailsContentItem)
+                    .tab-content
+                        #home.tab-pane.active(role='tabpanel')
+                            .details-content.tab-content
+                                each detailsContentItem in detailsContentItems
+                                    +details-content(detailsContentItem)
+                        #profile.tab-pane(role='tabpanel') 
+                            p thông tin sản phẩm
+                        #messages.tab-pane(role='tabpanel') 
+                            p đánh giá 5 sao
+                    
                 .col-xl-4.col-lg-4.selling-products
                     .selling-products-1.pb-6
                         p.text-uppercase.fw-bolder sản phẩm bán chạy 
@@ -70,4 +83,4 @@ block main
                     .selling-products-2
                         p.text-uppercase.fw-bolder sản phẩm mua nhiều
                         - for(let i=1; i<=3; i++)
-                                +selling-product-item
+                            +selling-product-item

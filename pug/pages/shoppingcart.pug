@@ -4,7 +4,7 @@ block title
     title Shopping Cart
 
 block main 
-    +breadcrumb(["home", "sản phẩm"], "trang sức")
+    +breadcrumb(["home"], "giỏ hàng")
     +section("shopping-cart", "pt-4 pb-10")
         .container
             h2.text-uppercase.fw-bold giỏ hàng
@@ -28,7 +28,7 @@ block main
                                 td
                                     +div-price-small(price)
                                 td
-                                    input.form-control-plaintext.input_custom(type="number" value="1" min=1)
+                                    input.form-control-plaintext.input_custom.text-center(type="number" value="1" min=1)
                                 td
                                      +div-price-small(price)
                                 td 

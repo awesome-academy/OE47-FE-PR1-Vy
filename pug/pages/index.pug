@@ -15,31 +15,35 @@ block main
                 each serviceItem in serviceItems 
                     - const {icon, text, border } = serviceItem
                     if(!border)
-                        .service-items.col-lg-4.col-md-4.col-sm-4.col-12
-                            i.fa(class=icon)
-                            p.font-size-14.text-center= text
+                        .service-items.col-lg-4.col-md-4.col-sm-12.col-12
+                            .row.align-items-center.w-100.service-items__all
+                                i.col-lg-12.col-md-12.col-sm-3.col-3.text-center.fa(class=`fa-${icon}`)
+                                p.col-lg-12.col-md-12.col-sm-9.col-9.font-size-14.text-center= text
                     else 
-                        .service-items.col-lg-4.col-md-4.col-sm-4.col-12.services-border-right
-                            i.fa(class=icon)
-                            p.font-size-14.text-center= text
+                        .service-items.col-lg-4.col-md-4.col-sm-12.col-12.services-border-right
+                            .row.align-items-center.w-100.service-items__border.service-items__all
+                                i.col-lg-12.col-md-12.col-sm-3.col-3.text-center.fa(class=`fa-${icon}`)
+                                p.col-lg-12.col-md-12.col-sm-9.col-9.font-size-14.text-center= text
 
     +section("static-blog")
         .container 
             .row.pb-2
                 .col-lg-6.col-md-6.col-sm-12.col-12
-                    .row
+                    .row.h-100
                         .static-blog-item.col-6.p-2
                             img.static-blog-img(src="../assets/images/static-blog/img-4.png" alt="img-4")
                         .static-blog-item.col-6.p-2
-                            .static-blog-item-1.position-relative
-                                .static-blog-container.text-center
-                                    p.text-uppercase.text-white.m-0 sữa tắm
-                                    +underline-custom("bg-light") 
+                            .static-blog-item-1.position-relative.h-100
+                                .static-blog-container.text-center.position-relative
+                                    .div-center
+                                        p.text-uppercase.text-white.m-0 sữa tắm
+                                        +underline-custom("bg-light") 
                         .static-blog-item.col-6.p-2
-                            .static-blog-item-2.position-relative
-                                .static-blog-container.text-center
-                                    p.text-uppercase.m-0.text-black nước hoa
-                                    +underline-custom("bg-dark")
+                            .static-blog-item-2.position-relative.h-100
+                                .static-blog-container.text-center.position-relative
+                                    .div-center
+                                        p.text-uppercase.m-0.text-black nước hoa
+                                        +underline-custom("bg-dark")
                         .static-blog-item.col-6.p-2
                             .static-blog-container.position-relative.h-100.p-0
                                 img.static-blog-img(src="../assets/images/static-blog/img-5.png" alt="img-5")
@@ -53,64 +57,54 @@ block main
                 .col-lg-6.col-md-6.col-sm-12.col-12.p-2
                     img.static-blog-img-large(src="../assets/images/static-blog/img-2.png" alt="img-2")
                 .col-lg-6.col-md-6.col-sm-12.col-12
-                    .row
+                    .row.h-100
                         .static-blog-item.col-6.p-2
-                            .static-blog-item-3.position-relative
-                                .static-blog-container.text-center
-                                    p.text-uppercase.m-0.text-black trang sức
-                                    +underline-custom("bg-dark")
+                            .static-blog-item-3.position-relative.h-100
+                                .static-blog-container.text-center.position-relative
+                                    .div-center
+                                        p.text-uppercase.m-0.text-black trang sức
+                                        +underline-custom("bg-dark")
                         .static-blog-item.col-6.p-2
                             img.static-blog-img(src="../assets/images/static-blog/img-3.png" alt="img-3")
                         .static-blog-item.col-6.p-2
                             img.static-blog-img(src="../assets/images/static-blog/img-7.png" alt="img-7")
                         .static-blog-item.col-6.p-2
-                            .static-blog-item-4
-                                .static-blog-container.text-center                                 
-                                    .div-center.text-center
-                                        img.w-50px.mb-3(src="../assets/images/static-blog/img-6.png" alt="")
+                            .static-blog-item-4.h-100
+                                .static-blog-container
+                                    .div-center.text-center.w-100
+                                        img.w-25.mb-3(src="../assets/images/static-blog/img-6.png" alt="")
                                         p.text-thirsty.m-0 Quén dũ hơn
-                                        p.d-flex.align-items-end
+                                        p.d-flex.align-items-center.justify-content-center    
                                             small.me-2 cùng 
                                             span.text-uppercase.letter-spacing-lg.text-thirsty daisy
 
     +section("customer_reviews", "py-10")
         .container 
             .row
-                .col-lg-6.p-0
-                    #carouselCustomer.carousel.slide(data-ride='carousel')                        
+                .col-lg-6.col-md-12.p-0
+                    #carouselCustomer.carousel.slide(data-ride='carousel')
                         .carousel-inner
-                            .item.active
-                                .w-100.d-flex.customer_reviews-items
-                                    .content-images.m-5
-                                        img.img-customer-reviews-size(src="../assets/images/customer_reviews/img-1.png" alt="img-customer_reviews-1")
-                                    .content-reviews 
-                                        p " Vẫn là vẻ bề ngoài vô cùng đơn giản với các tông màu trắng, hồng làm chủ đạo nhưng lại tạo ra sức hút kì lạ với những ai cầm trên tay sản phẩm ấy! Với xông nghệ cải tiến mới nhất, hãng Rohto "
-                                        p
-                                            span.text-uppercase tutile - 
-                                            i Giám đốc phát triển ahihi
-                            .item
-                                .w-100.d-flex.customer_reviews-items
-                                    .content-images.m-5
-                                        img.img-customer-reviews-size(src="../assets/images/customer_reviews/img-2.png" alt="img-customer_reviews-1")
-                                    .content-reviews 
-                                        p " Vẫn là vẻ bề ngoài vô cùng đơn giản với các tông màu trắng, hồng làm chủ đạo nhưng lại tạo ra sức hút kì lạ với những ai cầm trên tay sản phẩm ấy! Với xông nghệ cải tiến mới nhất, hãng Rohto "
-                                        p
-                                            span.text-uppercase tutile - 
-                                            i Giám đốc phát triển sản phẩm
+                            each customerReviewItem in customerReviewItems
+                                - const {active} = customerReviewItem
+                                if(active==true)
+                                    .item.active
+                                        +customerReview(customerReviewItem)
+                                else
+                                    .item
+                                        +customerReview(customerReviewItem)
                         ol.carousel-indicators
                             li.active(data-target='#carouselCustomer' data-slide-to='0')
                             li(data-target='#carouselCustomer' data-slide-to='1')
 
-    +section("product-list", "py-10")
-        .container
+    +section("product-list", "py-8")
+        .container.product-list__header
             .row 
                 .col-12
-                    .tab-pill.text-center.d-flex.justify-content-center.align-items-end
-                        p.text-muted.px-4.font-size-14.text-thirsty Sản phẩm mới
-                        div
-                            span.text-primary.text-thirsty.px-4.fw-bolder.font-size-16 Sản phẩm bán chạy
-                            +underline-custom("bg-dark")
-                        p.text-muted.px-4.font-size-14.text-thirsty Sản phẩm đặc biệt
+                    .product-list__header-container.text-center.row
+                        p.text-muted.px-4.font-size-14.text-thirsty.product-list__header-item.col-lg-4.col-md-4.col-sm-12.col-12 Sản phẩm mới
+                        p.text-primary.text-thirsty.px-4.fw-bolder.font-size-20.product-list__header-item.col-lg-4.col-md-4.col-sm-12.col-12 Sản phẩm bán chạy                            
+                        p.text-muted.px-4.font-size-14.text-thirsty.product-list__header-item.col-lg-4.col-md-4.col-sm-12.col-12 Sản phẩm đặc biệt
+                    +underline-custom("bg-dark")
         .pt-5
             .container
                 .row
@@ -131,8 +125,8 @@ block main
             .div.mt-6
                 #myCarousel.carousel.slide
                     .carousel-inner
-                        each productItem in productItems
-                            +slideItems(productItem)
+                        each slideItem in slideItems
+                            +slideItems(slideItem)
                     a.left.carousel-control(href='#myCarousel' data-slide='prev')
                         i.fa.fa-long-arrow-left
                     a.right.carousel-control(href='#myCarousel' data-slide='next')
@@ -151,39 +145,42 @@ block main
     +section("sna-footer", "py-5")
         .container
             .row.gx-8
-                .col-lg-4.col-md-12.col-sm-12.col-12
-                    div.text-center.pb-10
+                .col-lg-4.col-md-6.col-sm-12.col-12
+                    div.text-center.pb-6
                         p.text-uppercase.text-black.fw-bolder về chúng tôi 
                         +underline-custom("bg-dark")
-                    h4.text-uppercase.fw-bold giới thiệu chung về mỹ phẩm handmade mandala
+                    +logo
+                    h4.text-uppercase.fw-bold.mb-4 giới thiệu chung về mỹ phẩm handmade mandala
                     span.font-size-16 Hi, chào các nàng, sau khá nhiều lời hứa hão thì tớ quay lại hâm nóng blog này. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
-                .col-lg-4.col-md-12.col-sm-12.col-12
-                    div.text-center.pb-10
+                .col-lg-4.col-md-6.col-sm-12.col-12
+                    .text-center.pb-6
                         p.text-uppercase.text-black.fw-bolder blog
                         +underline-custom("bg-dark")
                     img.w-100.mb-3(src="../assets/images/blog-img.png" alt="")
-                    h4.text-uppercase.fw-bold review son sắt
+                    h4.text-uppercase.fw-bold review son kem
                     span.font-size-16 Hi, chào các nàng, sau khá nhiều lời hứa hão thì tớ quay lại hâm nóng blog này. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy.
                 .col-lg-4.col-md-12.col-sm-12.col-12
-                    div.text-center.pb-10
-                        p.text-uppercase.text-black.fw-bolder gửi email đi
-                        +underline-custom("bg-dark")
-                    form.form-email.text-center
-                        h5.mb-2 Gửi email 
-                        span.font-size-14 để nhận những ưu đãi mới nhất
-                        .form-group
-                            input.height-40.form-control-plaintext.input_custom(type="text" placeholder="Họ tên: *")
-                        .form-group
-                            input.height-40.form-control-plaintext.input_custom(type="text" placeholder="Số điện thoại: *")
-                        .form-group
-                            input.height-40.form-control-plaintext.input_custom(type="text" placeholder="Email: *")
-                        button.btn-xs.button_custom.text-white.background-primary.border-none.btn.height-40
-                            i.fa.fa-paper-plane.me-2
-                            span.text-uppercase gửi email
-                    div.text-center.py-4
-                        p.text-uppercase.text-black.fw-bolder tag sản phẩm
-                        +underline-custom("bg-dark")
-                    +productTags()
+                    .row
+                        .text-center.col-lg-12.col-md-6.col-sm-12.col-12
+                            .sna-item__header.pb-6
+                                p.text-uppercase.text-black.fw-bolder gửi email cho chúng tôi
+                                +underline-custom("bg-dark")
+                            form.form-email.text-center
+                                h5.mb-2 Gửi email 
+                                span.font-size-14 để nhận những ưu đãi mới nhất
+                                .form-group
+                                    input.height-40.form-control-plaintext.input_custom(type="text" placeholder="Họ tên: *")
+                                .form-group
+                                    input.height-40.form-control-plaintext.input_custom(type="text" placeholder="Số điện thoại: *")
+                                .form-group
+                                    input.height-40.form-control-plaintext.input_custom(type="text" placeholder="Email: *")
+                                button.btn-xs.button_custom.text-white.background-primary.border-none.btn.height-40
+                                    i.fa.fa-paper-plane.me-2
+                                    span.text-uppercase gửi email
+                        .col-lg-12.col-md-6.col-sm-12.col-12
+                            p.text-uppercase.text-black.fw-bolder.text-center tag sản phẩm
+                            +underline-custom("bg-dark")
+                            +productTags()
 
     +section("newsletter_popup")
         +newsletter-popup

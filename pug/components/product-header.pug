@@ -6,7 +6,7 @@ mixin product-header(component)
                     i.fa.fa-th-large.me-3
                 a.hover-primary-dark(href="/product-list.html")
                     i.fa.fa-list
-            +pagination
+            +pagination(3)
     else
         .product-header.d-flex.justify-content-between.align-items-center
             .div-icons.d-flex.align-items-center
@@ -14,4 +14,4 @@ mixin product-header(component)
                     i.fa.fa-th-large.me-3
                 a.hover-primary-dark(href="#")
                     i.fa.fa-list
-            +pagination
+            +pagination(3)

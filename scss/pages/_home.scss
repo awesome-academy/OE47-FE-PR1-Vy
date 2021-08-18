@@ -1,13 +1,4 @@
 section.banner {
-    // background-image: url("../assets/images/banner/banner.png");
-    // background-position: center;
-    // background-size: cover;
-    // -webkit-background-size: cover;
-    // -moz-background-size: cover;
-    // -o-background-size: cover;
-    // position: relative;
-    // height: 100vh;
-
     .banner-container {
         .title {
             font-size: 100px;
@@ -25,10 +16,30 @@ section.services {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        .service-items__all {
+            @include responsive("extra-small") {
+                padding: 1rem 0;
+            }
+            i {
+                @include responsive("extra-small") {
+                    font-size: 30px;
+                }
+            }
+        }
+
+        .service-items__border {
+            @include responsive("extra-small") {
+                border-bottom: solid 2px $color-line;
+            }
+        }
     }
 
     .services-border-right {
         border-right: solid 1px $color-grey;
+        @include responsive("extra-small") {
+            border: none;
+        }
     }
 }
 
@@ -146,26 +157,58 @@ section.customer_reviews {
 
     .customer_reviews-items {
         .content-images {
-            width: 60px;
-            position: relative;
-            height: 60px;
-
-            .img-customer-reviews-size {
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
+            order: 1;
+            @include responsive("extra-small") {
+                order: 2;
+                display: flex;
+                align-items: center;
             }
 
-            &::before {
-                content: "";
-                position: absolute;
-                height: 80px;
-                width: 80px;
-                top: 50%;
-                border-radius: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                border: solid 2px $color-black;
+            .content-images-container {
+                position: relative;
+                margin: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .img-customer-reviews-size {
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 80px;
+                    width: 80px;
+                    top: 50%;
+                    border-radius: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    border: solid 2px $color-black;
+                }
+            }
+
+            .author {
+                display: none;
+                @include responsive("extra-small") {
+                    display: block;
+                }
+            }
+        }
+
+        .content-reviews {
+            order: 2;
+            padding-left: 1rem;
+
+            @include responsive("extra-small") {
+                order: 1;
+            }
+
+            .author {
+                @include responsive("extra-small") {
+                    display: none;
+                }
             }
         }
     }
@@ -178,6 +221,18 @@ section.product-list {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    .product-list__header {
+        .product-list__header-container {
+            align-items: flex-end;
+            @include responsive("small") {
+                .product-list__header-item {
+                    display: block;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
     .category-items {
         padding-left: 20px;
         padding-right: 20px;
@@ -195,6 +250,7 @@ section.product-list {
                 margin-left: 20px;
             }
         }
+
         p {
             @include responsive("medium") {
                 padding-left: 20px;
@@ -205,19 +261,55 @@ section.product-list {
     .carousel {
         .carousel-inner {
             .carousel-item {
-                .product-item {
-                    &:hover {
-                        .slide-item-content {
-                            .slide-item-cart {
-                                visibility: visible;
-                                opacity: 1;
+                .slider-item {
+                    .product-item {
+                        position: relative;
+                        &:hover {
+                            .slide-item-content {
+                                .slide-item-cart {
+                                    visibility: visible;
+                                    opacity: 1;
+                                }
                             }
                         }
-                    }
-                    .slide-item-content {
-                        .slide-item-cart {
-                            visibility: hidden;
-                            opacity: 0;
+
+                        .slide-item-content {
+                            .slide-item-cart {
+                                visibility: hidden;
+                                opacity: 0;
+                            }
+                        }
+
+                        &:first-child,
+                        &:last-child {
+                            transform: scale(0.85);
+                            ::after {
+                                content: "";
+                                background: rgba(255, 255, 255, 0.15);
+                                top: 0;
+                                left: 0;
+                                right: 0;
+                                bottom: 0;
+                                position: absolute;
+                            }
+                        }
+
+                        @include responsive("small") {
+                            &:not(:nth-child(3n + 1)) {
+                                display: none;
+                            }
+                            &:first-child,
+                            &:last-child {
+                                ::after {
+                                    content: none;
+                                }
+                            }
+                        }
+
+                        @include responsive("extra-small") {
+                            &:not(:first-child) {
+                                display: none;
+                            }
                         }
                     }
                 }
@@ -244,5 +336,12 @@ section.sna-footer {
     .form-email {
         padding: 15px;
         background-color: $backgrund-form-email;
+    }
+
+    .navbar-brand {
+        display: none;
+        @include responsive("medium") {
+            display: block;
+        }
     }
 }

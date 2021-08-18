@@ -5,3 +5,19 @@ mixin section(title, box)
 mixin product-banner
     +section("product-banner")
         img.w-100(src="../assets/images/product/banner-large.png" alt="banner-main")
+
+mixin customerReview(item)
+    - const { imgUrl ,alt ,content ,author, brand, active } = item
+        .w-100.customer_reviews-items.row.g-0
+            .content-reviews.col-lg-10.col-md-10.col-sm-12
+                p= `"${content}"`
+                p.author
+                    span.text-uppercase= `${brand} -`
+                    i= author
+            .content-images.col-lg-2.col-md-2.col-sm-12
+                .content-images__col
+                    .content-images-container
+                        img.img-customer-reviews-size(src=imgUrl alt=alt)
+                .author.col-9.px-4
+                    p.text-uppercase= `- ${brand} -`
+                    i= author

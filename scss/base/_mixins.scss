@@ -14,8 +14,13 @@
 }
 
 @mixin responsive($breakpoint) {
+    @if($breakpoint == "xxs") {
+        @media (max-width: $xxs-width) {
+            @content;
+        }
+    }
     @if($breakpoint == "extra-small") {
-        @media (min-width: $extra-small-width) {
+        @media (max-width: $extra-small-width) {
             @content;
         }
     }
@@ -30,14 +35,19 @@
             @content;
         }
     }
+    @if($breakpoint == "extra-medium") {
+        @media (max-width: $extra-medium-width) {
+            @content;
+        }
+    }
     @if($breakpoint == "large") {
-        @media (max-width: $large-width - 1px) {
+        @media (max-width: $large-width) {
             @content;
         }
     }
 
     @if($breakpoint == "extra-large") {
-        @media (min-width: $extra-largep-width) {
+        @media (min-width: $large-width) {
             @content;
         }
     }

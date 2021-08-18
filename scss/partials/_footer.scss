@@ -15,6 +15,9 @@ footer {
                     }
                 }
             }
+            @include responsive("medium") {
+                align-items: flex-start;
+            }
         }
     }
 }

@@ -4,14 +4,14 @@ block title
     title Liên hệ
 
 block main
-    +breadcrumb(["home", "ahihi"], "liên hệ")
+    +breadcrumb(["home"], "liên hệ")
 
     +section("contact-content", "pb-8 pt-4")
         .container
             h1.text-uppercase.fw-bold liên hệ
             .row 
-                .col-6
+                .contact-content__image.col-lg-6.col-md-12.col-sm-12.col-12
                     iframe.w-100.h-100(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3833.715598447407!2d108.21780861468433!3d16.080241488874147!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3142183b8dc2697d%3A0xc105565d68b6ad90!2zMTYgTMO9IFRoxrDhu51uZyBLaeG7h3QsIFRo4bqhY2ggVGhhbmcsIEjhuqNpIENow6J1LCDEkMOgIE7hurVuZyA1NTAwMDAsIFZp4buHdCBOYW0!5e0!3m2!1svi!2s!4v1628668259509!5m2!1svi!2s" allowfullscreen="" loading="lazy")
-                .col-6
+                .contact-content__text.col-lg-6.col-md-12.col-sm-12.col-12
                     p.text-uppercase gửi email cho chúng tôi
                     +form(["tên", "email"], ["tin nhắn"], "gửi")

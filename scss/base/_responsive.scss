@@ -6,25 +6,22 @@
     }
 }
 
-@include responsive("medium-width") {
-    header {
-        ul.list-icon-header {
-            order: 0 !important;
-            margin-left: auto !important;
+@include responsive("extra-medium") {
+    .list-icon-header {
+        order: 2;
+        margin-left: auto;
+    }
+    .navbar-toggler {
+        order: 3;
+        @include responsive("extra-medium") {
+            margin-left: 0 !important;
         }
     }
-
     .border-primary {
         border: none !important;
         position: relative !important;
         &::before {
             content: none;
-        }
-    }
-
-    .navbar {
-        .navbar-toggler {
-            margin-left: unset !important;
         }
     }
 }

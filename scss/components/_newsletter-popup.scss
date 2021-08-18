@@ -1,9 +1,5 @@
-.newsletter_popup {
-    display: none;
-}
-
-.label-for-newsletter_popup {
-    position: absolute;
+.newsletter-popup_label {
+    position: fixed;
     top: 10%;
     cursor: pointer;
     left: 50%;
@@ -11,15 +7,19 @@
     transform: translateY(-50%);
 }
 
-input[type=checkbox]:checked~.newsletter-popup {
+.newsletter_popup_input {
     display: none;
 }
 
-input[type=checkbox]:checked~.label-for-newsletter_popup {
+input[type="checkbox"]:checked ~ .newsletter-popup {
     display: none;
 }
 
-.label-for-newsletter_popup::before {
+input[type="checkbox"]:checked ~ .newsletter-popup_label {
+    display: none;
+}
+
+.newsletter-popup_label::before {
     content: "\f00d";
     position: absolute;
     font-family: fontawesome;
@@ -29,40 +29,34 @@ input[type=checkbox]:checked~.label-for-newsletter_popup {
     transform: translate(-50%, -50%);
 }
 
-section.newsletter-popup {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10000;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .newsletter-popup-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 60%;
-        .newsletter-popup-image {
-            width: 100%;
-        }
-
-        .div-newsletter-popup-content {
-            form {
-                input {
-                    height: 40px;
-                    border: solid 1px $color-line;
-                    outline: none;
-                    padding: 0 15px;
-                    border-radius: 25px;
-                }
+section.newsletter_popup {
+    .newsletter-popup {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+        background-color: rgba(0, 0, 0, 0.5);
+        .newsletter-popup-container {
+            position: fixed;
+            .newsletter-popup-image {
+                width: 100%;
             }
-            a {
-                cursor: pointer;
+
+            .newsletter-popup-content {
+                form {
+                    input {
+                        height: 40px;
+                        border: solid 1px $color-line;
+                        outline: none;
+                        padding: 0 15px;
+                        border-radius: 25px;
+                    }
+                }
+                a {
+                    cursor: pointer;
+                }
             }
         }
     }

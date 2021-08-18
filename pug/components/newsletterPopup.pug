@@ -1,16 +1,15 @@
 mixin newsletter-popup 
     input.newsletter_popup_input#newsletter_popup_input(type="checkbox")
-    label.newsletter-popup_label(for="newsletter_popup")
-    +section("newsletter-popup")
-        .container.d-flex.justify-content-center
-            .newsletter-popup-container.position-relative
-                img.newsletter-popup-image(src="../assets/images/newsletter_popup_background.png" alt="")
-                .newsletter-popup-content.div-center.position-absolute.text-center.w-100
-                    .row.justify-content-center
-                        .col-10
-                            p.fw-bolder.text-uppercase gửi email 
-                            p Hãy gửi email của bạn cho chúng tôi để được tư vấn tốt nhất
-                            p Sự hài lòng của bạn là thành công của chúng tôi 
-                            form.py-4
-                                input.form-control-plaintext.input_custom(placeholder="Email của bạn ...")
-                            a.text-decoration-underline.text-uppercase.text-black.d-block.py-4 gửi email
+    label.newsletter-popup_label(for="newsletter_popup_input")
+    .newsletter-popup
+        .newsletter-popup-container.position-fixed.div-center
+            img.newsletter-popup-image(src="../assets/images/newsletter_popup_background.png" alt="")
+            .newsletter-popup-content.div-center.position-absolute.text-center.w-100
+                .row.justify-content-center
+                    .col-10
+                        p.fw-bolder.text-uppercase gửi email 
+                        p Hãy gửi email của bạn cho chúng tôi để được tư vấn tốt nhất
+                        p Sự hài lòng của bạn là thành công của chúng tôi 
+                        form.py-4
+                            input.form-control-plaintext.input_custom(placeholder="Email của bạn ...")
+                        a.text-decoration-underline.text-uppercase.text-black.d-block.py-4 gửi email

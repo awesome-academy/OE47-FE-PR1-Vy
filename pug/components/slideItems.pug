@@ -1,15 +1,20 @@
-mixin slideItems(listItem)
-    - const { src, alt, brand_name, name, price, url, active } = listItem
+mixin slideItems(item)
+    - const { active, listItems } = item
         if(active == true)
             .carousel-item.active
-                +slideItemContent(src, alt, brand_name, name, price, url)
+                .slider-item.row
+                    each listItem in listItems                    
+                        +slideItemContent(listItem)
 
         else
             .carousel-item
-                +slideItemContent(src, alt, brand_name, name, price, url)
+                .slider-item.row
+                    each listItem in listItems
+                        +slideItemContent(listItem)
 
-mixin slideItemContent(src, alt, brand_name, name, price, url)
-    .product-item.col-lg-2.d-inline-block
+mixin slideItemContent(listItem)
+    - const { src, alt, brand_name, name, price, url } = listItem
+    .product-item.col-lg-2.col-md-6.col-sm-6.col-12
         .slide-item-img.position-relative
             img.img-fluid(src=src, alt=alt)
         .slide-item-content.text-center.pt-4

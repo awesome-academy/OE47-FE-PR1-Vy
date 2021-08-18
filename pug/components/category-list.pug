@@ -9,7 +9,7 @@ mixin category-list
                 each listCategory in listCategories
                     - const { title, id, listCategoryItems } = listCategory
                     li.list-categories-item.list-unstyled.pt-4
-                        input(class=id, id=id)(type="checkbox")
+                        input(id=id)(type="checkbox")
                         label.toggle-menu.text-uppercase.align-items-center.d-flex.hover-primary-dark.justify-content-between.m-0.categories-text(for=id)= title
                         ul.sub-categories-list.m-1
                             each listCategoryItem in listCategoryItems
